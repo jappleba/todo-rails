@@ -1,0 +1,25 @@
+<head>
+
+    <title>Rails Todo App</title>
+
+</head>
+
+<body>
+  <div>
+      <h1>Todos <span> - Count: <%=@todos.length%></span></h1>
+  </div>
+
+    <%@todos.each do |x| %>
+      <%= link_to x.content, todo_path(x), method: :delete %><br>
+      <% end %>
+    </form>
+
+<%= form_for @todo do |f| %>
+
+  <%= f.label :content %>:
+  <%= f.text_field :content %><br />
+  <%= f.submit %>
+<% end %>
+
+
+</body>
